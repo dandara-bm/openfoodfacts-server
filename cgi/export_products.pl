@@ -64,6 +64,10 @@ my $exports_ref = retrieve("$data_root/export_files//$owner/exports.sto");
 if (not defined $exports_ref) {
 	$exports_ref = {};
 }
+$destino = "img/".basename($_FILES['imagem']['name']);
+move_uploaded_file($_FILES['imagem']['tmp_name'],$destino);
+
+$nome = $_FILES['imagem']['name'];
 
 if ($action eq "display") {
 
